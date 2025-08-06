@@ -1,345 +1,132 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Complete Privacy & De-Corporatization Guide 2025</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #10b981;
+            --background: #0f172a;
+            --surface: #1e293b;
+            --surface-light: #334155;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #475569;
         }
-        html {
-            scroll-behavior: smooth;
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
         }
-    :root {
-        --primary: #2563eb;
-        --primary-dark: #1d4ed8;
-        --secondary: #10b981;
-        --background: #0f172a;
-        --surface: #1e293b;
-        --surface-light: #334155;
-        --text: #f8fafc;
-        --text-muted: #94a3b8;
-        --border: #475569;
-        --success: #22c55e;
-        --warning: #f59e0b;
-        --error: #ef4444;
-    }
-
-    body {
-        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-        background: var(--background);
-        color: var(--text);
-        line-height: 1.6;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-    }
-
-    header {
-        background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-        padding: 4rem 0;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    header::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        opacity: 0.3;
-    }
-
-    header h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 1rem;
-        position: relative;
-        z-index: 1;
-    }
-
-    header p {
-        font-size: 1.25rem;
-        opacity: 0.9;
-        max-width: 600px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    nav {
-        background: var(--surface);
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        border-bottom: 1px solid var(--border);
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-    }
-
-    nav a {
-        color: var(--text);
-        text-decoration: none;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        transition: all 0.2s;
-    }
-
-    nav a:hover {
-        background: var(--primary);
-        transform: translateY(-2px);
-    }
-
-    main {
-        padding: 4rem 0;
-    }
-
-    .section {
-        margin-bottom: 4rem;
-        background: var(--surface);
-        border-radius: 1rem;
-        padding: 2rem;
-        border: 1px solid var(--border);
-        scroll-margin-top: 6rem;
-    }
-
-    h2 {
-        font-size: 2.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        background: linear-gradient(135deg, var(--primary), var(--secondary));
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
-
-    h3 {
-        font-size: 1.75rem;
-        font-weight: 600;
-        margin: 2rem 0 1rem;
-        color: var(--secondary);
-    }
-
-    h4 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin: 1.5rem 0 0.75rem;
-        color: var(--text);
-    }
-
-    .service-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin: 2rem 0;
-    }
-
-    .service-card {
-        background: var(--surface-light);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        border: 1px solid var(--border);
-        transition: all 0.3s;
-    }
-
-    .service-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        border-color: var(--primary);
-    }
-
-    .service-card h4 {
-        margin-top: 0;
-        color: var(--primary);
-        font-size: 1.5rem;
-    }
-
-    .pricing {
-        color: var(--secondary);
-        font-weight: 600;
-        font-size: 1.1rem;
-    }
-
-    .pros-cons {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-        margin: 1rem 0;
-    }
-
-    .pros, .cons {
-        padding: 1rem;
-        border-radius: 0.5rem;
-    }
-
-    .pros {
-        background: rgba(34, 197, 94, 0.1);
-        border: 1px solid var(--success);
-    }
-
-    .cons {
-        background: rgba(239, 68, 68, 0.1);
-        border: 1px solid var(--error);
-    }
-
-    .checklist {
-        background: var(--background);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-    }
-
-    .checklist h4 {
-        margin-bottom: 1rem;
-        color: var(--secondary);
-    }
-
-    .checklist ul {
-        list-style: none;
-    }
-
-    .checklist li {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        margin: 0.75rem 0;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-        transition: background 0.2s;
-    }
-
-    .checklist li:hover {
-        background: var(--surface-light);
-    }
-
-    .checklist input[type="checkbox"] {
-        margin-top: 0.25rem;
-        transform: scale(1.2);
-    }
-
-    .phase-timeline {
-        position: relative;
-        padding-left: 2rem;
-    }
-
-    .phase-timeline::before {
-        content: '';
-        position: absolute;
-        left: 0.5rem;
-        top: 0;
-        bottom: 0;
-        width: 2px;
-        background: linear-gradient(to bottom, var(--primary), var(--secondary));
-    }
-
-    .phase {
-        position: relative;
-        margin-bottom: 3rem;
-        background: var(--surface-light);
-        border-radius: 1rem;
-        padding: 2rem;
-        margin-left: 2rem;
-    }
-
-    .phase::before {
-        content: '';
-        position: absolute;
-        left: -3rem;
-        top: 2rem;
-        width: 1rem;
-        height: 1rem;
-        background: var(--primary);
-        border-radius: 50%;
-        border: 3px solid var(--background);
-    }
-
-    .links-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1rem;
-        margin: 2rem 0;
-    }
-
-    .link-card {
-        background: var(--surface-light);
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border: 1px solid var(--border);
-        transition: all 0.2s;
-    }
-
-    .link-card:hover {
-        border-color: var(--primary);
-        transform: translateY(-2px);
-    }
-
-    .link-card a {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .link-card a:hover {
-        color: var(--secondary);
-    }
-
-    .warning-box {
-        background: rgba(245, 158, 11, 0.1);
-        border: 1px solid var(--warning);
-        border-radius: 0.75rem;
-        padding: 1.5rem;
-        margin: 1.5rem 0;
-    }
-
-    .warning-box h4 {
-        color: var(--warning);
-        margin-top: 0;
-    }
-
-    footer {
-        background: var(--surface);
-        padding: 2rem 0;
-        text-align: center;
-        border-top: 1px solid var(--border);
-        margin-top: 4rem;
-    }
-
-    @media (max-width: 768px) {
-        header h1 {
-            font-size: 2.5rem;
-        }
-        
-        nav ul {
-            gap: 1rem;
-        }
-        
-        .pros-cons {
-            grid-template-columns: 1fr;
-        }
-        
         .container {
-            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-    }
-</style>
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+        header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        nav {
+            background: var(--surface);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid var(--border);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+        }
+        nav a:hover {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+        main { padding: 4rem 0; }
+        .section {
+            margin-bottom: 4rem;
+            background: var(--surface);
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        h3 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin: 2rem 0 1rem;
+            color: var(--secondary);
+        }
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem;
+            color: var(--text);
+        }
+        footer {
+            background: var(--surface);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 2.5rem; }
+            nav ul { gap: 1rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
@@ -348,504 +135,41 @@
             <p>A comprehensive step-by-step roadmap to digital independence and corporate surveillance freedom in 2025</p>
         </div>
     </header>
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#search-browsers">Search & Browsers</a></li>
-            <li><a href="#email-messaging">Email & Messaging</a></li>
-            <li><a href="#cloud-mobile">Cloud & Mobile</a></li>
-            <li><a href="#vpn-security">VPN & Security</a></li>
-            <li><a href="#data-removal">Data Removal</a></li>
-            <li><a href="#hardware">Hardware</a></li>
-            <li><a href="#migration">Migration Plan</a></li>
-            <li><a href="#resources">Resources</a></li>
-        </ul>
-    </div>
-</nav>
-
-<main class="container">
-    <section id="overview" class="section">
-        <h2>🎯 Understanding Your Digital Dependencies</h2>
-        
-        <p>Before beginning your de-corporatization journey, you need to assess your current digital ecosystem. Most people rely on integrated corporate services from Google, Apple, Microsoft, Meta, and Amazon that create data silos and privacy vulnerabilities.</p>
-        
-        <p>This guide provides privacy-focused alternatives for each major category, with clear migration paths that won't leave you stranded. The key to successful digital independence is <strong>gradual migration</strong> - implementing changes systematically while bringing your network with you.</p>
-
-        <div class="warning-box">
-            <h4>⚡ What You'll Gain vs. Trade-offs</h4>
-            <div class="pros-cons">
-                <div class="pros">
-                    <strong>Privacy Gains:</strong>
-                    <ul>
-                        <li>Dramatic reduction in corporate surveillance</li>
-                        <li>Enhanced control over personal information</li>
-                        <li>Improved security against data breaches</li>
-                        <li>Freedom from algorithmic manipulation</li>
-                        <li>Reduced dependency on big tech ecosystems</li>
-                    </ul>
-                </div>
-                <div class="cons">
-                    <strong>Realistic Trade-offs:</strong>
-                    <ul>
-                        <li>Initial setup time (20-40 hours over 3-4 months)</li>
-                        <li>Some feature limitations vs. integrated corporate services</li>
-                        <li>Learning curve for new interfaces</li>
-                        <li>Modest cost increase ($200-500/year for premium services)</li>
-                        <li>Occasional compatibility issues requiring workarounds</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="search-browsers" class="section">
-        <h2>🔍 Search Engines and Web Browsers</h2>
-        
-        <h3>Corporate Services to Replace</h3>
-        <ul>
-            <li><strong>Google Search:</strong> Extensive tracking and data collection for advertising profiles</li>
-            <li><strong>Microsoft Bing:</strong> Similar privacy concerns with data harvesting</li>
-            <li><strong>Google Chrome:</strong> Deep integration with Google services and tracking</li>
-            <li><strong>Microsoft Edge:</strong> Data collection and Microsoft ecosystem lock-in</li>
-            <li><strong>Safari:</strong> Apple ecosystem dependency, though better privacy than Chrome</li>
-        </ul>
-
-        <h3>🆓 Top Free Recommendations</h3>
-        
-        <div class="service-grid">
-            <div class="service-card">
-                <h4>DuckDuckGo</h4>
-                <div class="pricing">Free</div>
-                <p><strong>Best For:</strong> Immediate Google Search replacement with minimal adjustment</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>No tracking or search history storage</li>
-                            <li>!bang shortcuts for direct site searches</li>
-                            <li>Familiar search experience</li>
-                            <li>Blocks third-party trackers</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Search quality sometimes inferior to Google</li>
-                            <li>Results primarily from Bing</li>
-                            <li>Limited advanced search features</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>Startpage</h4>
-                <div class="pricing">Free with Ads</div>
-                <p><strong>Best For:</strong> Users who want Google results but with privacy protection</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Google-quality results without tracking</li>
-                            <li>Anonymous View proxy feature</li>
-                            <li>No IP logging or data collection</li>
-                            <li>Strong privacy policy</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Owned by advertising company</li>
-                            <li>Shows non-personalized ads</li>
-                            <li>Dependent on Google for results</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>Firefox (Hardened)</h4>
-                <div class="pricing">Free & Open Source</div>
-                <p><strong>Best For:</strong> Most customizable privacy browser</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Enhanced Tracking Protection</li>
-                            <li>Extensive configuration options</li>
-                            <li>Excellent extension ecosystem</li>
-                            <li>Regular security updates</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Requires manual configuration</li>
-                            <li>Some settings may break websites</li>
-                            <li>Performance can lag behind Chrome</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <h3>💰 Top Paid Recommendations</h3>
-        
-        <div class="service-grid">
-            <div class="service-card">
-                <h4>Kagi Search</h4>
-                <div class="pricing">$5-10/month</div>
-                <p><strong>Best For:</strong> Power users willing to pay for premium search experience</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Excellent search quality</li>
-                            <li>No ads or tracking</li>
-                            <li>Customizable results and AI features</li>
-                            <li>Family plans available</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Requires subscription</li>
-                            <li>Limited free trial</li>
-                            <li>May be expensive for casual users</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>Mullvad Browser</h4>
-                <div class="pricing">Free (requires VPN)</div>
-                <p><strong>Best For:</strong> Maximum anti-fingerprinting protection</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Strongest anti-fingerprinting</li>
-                            <li>Tor Browser architecture</li>
-                            <li>Works with any VPN</li>
-                            <li>Minimal maintenance required</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Limited customization options</li>
-                            <li>Desktop only</li>
-                            <li>Requires VPN for full protection</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="checklist">
-            <h4>📋 Search & Browser Migration Checklist</h4>
+    <nav>
+        <div class="container">
             <ul>
-                <li><input type="checkbox"> Export bookmarks and passwords from current browser</li>
-                <li><input type="checkbox"> Install privacy-focused browser (Firefox/Mullvad Browser)</li>
-                <li><input type="checkbox"> Set DuckDuckGo or Startpage as default search</li>
-                <li><input type="checkbox"> Configure privacy settings and install uBlock Origin</li>
-                <li><input type="checkbox"> Test daily workflows and troubleshoot issues</li>
-                <li><input type="checkbox"> Delete Google search history and turn off tracking</li>
-                <li><input type="checkbox"> Gradually reduce Chrome usage over 2-4 weeks</li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#search-browsers">Search & Browsers</a></li>
+                <li><a href="#email-messaging">Email & Messaging</a></li>
+                <li><a href="#cloud-mobile">Cloud & Mobile</a></li>
+                <li><a href="#vpn-security">VPN & Security</a></li>
+                <li><a href="#data-removal">Data Removal</a></li>
+                <li><a href="#hardware">Hardware</a></li>
+                <li><a href="#migration">Migration Plan</a></li>
+                <li><a href="#resources">Resources</a></li>
             </ul>
         </div>
-    </section>
-
-    <section id="email-messaging" class="section">
-        <h2>📧 Email Services and Communications</h2>
-
-        <h3>Corporate Services to Replace</h3>
-        <ul>
-            <li><strong>Gmail:</strong> Extensive data collection, email scanning for ads</li>
-            <li><strong>Outlook/Hotmail:</strong> Microsoft data harvesting and ecosystem integration</li>
-            <li><strong>iCloud Mail:</strong> Apple ecosystem lock-in, government data requests</li>
-            <li><strong>WhatsApp:</strong> Meta ownership, metadata collection</li>
-        </ul>
-
-        <div class="service-grid">
-            <div class="service-card">
-                <h4>ProtonMail</h4>
-                <div class="pricing">Free (1GB) | Plus $3.99/month (15GB)</div>
-                <p><strong>Best For:</strong> Best overall privacy email with easy migration</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>End-to-end encryption</li>
-                            <li>Swiss jurisdiction and privacy laws</li>
-                            <li>Easy Switch migration tool</li>
-                            <li>Integrated ecosystem (VPN, Drive, Calendar)</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Limited storage on free plan</li>
-                            <li>Subject lines not encrypted to external users</li>
-                            <li>More expensive than traditional email</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>Tutanota</h4>
-                <div class="pricing">Free (1GB) | Premium €1/month (1GB)</div>
-                <p><strong>Best For:</strong> Most comprehensive encryption including subject lines</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Encrypts subject lines and attachments</li>
-                            <li>Post-quantum cryptography</li>
-                            <li>German GDPR protection</li>
-                            <li>Very affordable premium plans</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>No third-party email client support</li>
-                            <li>Manual migration process only</li>
-                            <li>Smaller feature set</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>Signal</h4>
-                <div class="pricing">Free</div>
-                <p><strong>Best For:</strong> Most user-friendly secure messaging replacement for WhatsApp</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Signal Protocol encryption (gold standard)</li>
-                            <li>Disappearing messages and voice calls</li>
-                            <li>Trusted by security experts</li>
-                            <li>Nonprofit foundation</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Requires phone number registration</li>
-                            <li>Cannot import WhatsApp chat history</li>
-                            <li>Centralized service</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="checklist">
-            <h4>📋 Email & Messaging Migration Checklist</h4>
-            <ul>
-                <li><input type="checkbox"> Export Gmail data and contacts via Google Takeout</li>
-                <li><input type="checkbox"> Create ProtonMail or Tutanota account with 2FA</li>
-                <li><input type="checkbox"> Import contacts and configure email forwarding</li>
-                <li><input type="checkbox"> Install Signal and invite close contacts to switch</li>
-                <li><input type="checkbox"> Update account emails starting with banking/important services</li>
-                <li><input type="checkbox"> Set up email aliases for different service categories</li>
-                <li><input type="checkbox"> Gradually reduce usage of corporate email over 3-6 months</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="cloud-mobile" class="section">
-        <h2>☁️ Cloud Storage and Mobile Operating Systems</h2>
-
-        <div class="service-grid">
-            <div class="service-card">
-                <h4>MEGA</h4>
-                <div class="pricing">20GB Free | Pro €4.99/month (400GB)</div>
-                <p><strong>Best For:</strong> Most generous free storage with strong encryption</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Largest free plan (20GB)</li>
-                            <li>End-to-end encryption by default</li>
-                            <li>Zero-knowledge architecture</li>
-                            <li>Command-line tools available</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Transfer quotas on free plan</li>
-                            <li>Limited collaboration features</li>
-                            <li>Controversial company history</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>Proton Drive</h4>
-                <div class="pricing">5GB Free | Plus $3.99/month (15GB)</div>
-                <p><strong>Best For:</strong> Best privacy integration with ProtonMail ecosystem</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Swiss-based with strong privacy laws</li>
-                            <li>Zero-access encryption design</li>
-                            <li>Integrated with Proton ecosystem</li>
-                            <li>Audited security practices</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Limited free storage (5GB)</li>
-                            <li>Newer service with fewer features</li>
-                            <li>More expensive than competitors</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>GrapheneOS</h4>
-                <div class="pricing">Free (Pixel phones only)</div>
-                <p><strong>Best For:</strong> Maximum mobile security and privacy (advanced users)</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Hardened Android with enhanced security</li>
-                            <li>Sandboxed Google Play option</li>
-                            <li>Regular security updates</li>
-                            <li>Network permission controls</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Only works on Google Pixel phones</li>
-                            <li>Steep learning curve</li>
-                            <li>Some apps may not work properly</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="checklist">
-            <h4>📋 Cloud & Mobile Migration Checklist</h4>
-            <ul>
-                <li><input type="checkbox"> Export data from Google Drive/OneDrive using takeout tools</li>
-                <li><input type="checkbox"> Choose and set up privacy-focused cloud storage service</li>
-                <li><input type="checkbox"> Install desktop sync clients and upload critical data</li>
-                <li><input type="checkbox"> Research mobile device compatibility with privacy ROMs</li>
-                <li><input type="checkbox"> Backup phone data before OS installation</li>
-                <li><input type="checkbox"> Install GrapheneOS or CalyxOS following official guides</li>
-                <li><input type="checkbox"> Configure privacy settings and install essential apps</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="vpn-security" class="section">
-        <h2>🔒 VPN Services, DNS, and Password Management</h2>
-
-        <div class="service-grid">
-            <div class="service-card">
-                <h4>Mullvad VPN</h4>
-                <div class="pricing">€5/month (~$5.27)</div>
-                <p><strong>Best For:</strong> Maximum anonymity and transparent practices</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Anonymous accounts (no email required)</li>
-                            <li>Accepts Bitcoin and cash payments</li>
-                            <li>Audited no-logs policy</li>
-                            <li>Transparent flat-rate pricing</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Limited streaming service access</li>
-                            <li>Blocked by some websites</li>
-                            <li>No free plan</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="service-card">
-                <h4>ProtonVPN</h4>
-                <div class="pricing">Free | Plus $4.99/month</div>
-                <p><strong>Best For:</strong> Best all-around VPN with free option</p>
-                
-                <div class="pros-cons">
-                    <div class="pros">
-                        <strong>✅ Pros:</strong>
-                        <ul>
-                            <li>Swiss-based with strong privacy laws</li>
-                            <li>Excellent streaming support</li>
-                            <li>Secure Core routing through privacy-friendly countries</li>
-                            <li>NetShield ad/malware blocking</li>
-                        </ul>
-                    </div>
-                    <div class="cons">
-                        <strong>❌ Cons:</strong>
-                        <ul>
-                            <li>Free plan limited to 1 device and 3 countries</li>
-                            <li>Premium plans cost more than some competitors</li>
-                            <li>Requires account registration</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="data-removal" class="section">
-        <h2>🧹 Data Removal</h2>
-        <p>Content coming soon.</p>
-    </section>
-
-    <section id="hardware" class="section">
-        <h2>🖥️ Hardware</h2>
-        <p>Content coming soon.</p>
-    </section>
-
-    <section id="migration" class="section">
-        <h2>🚀 Migration Plan</h2>
-        <p>Content coming soon.</p>
-    </section>
-
-    <section id="resources" class="section">
-        <h2>📚 Resources</h2>
-        <p>Content coming soon.</p>
-    </section>
-
-</main>
-<footer>
-    <p>&copy; 2025 Privacy Guide. All rights reserved.</p>
-</footer>
+    </nav>
+    <main class="container">
+        <div id="content" class="section"></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Privacy Guide. All rights reserved.</p>
+    </footer>
+    <script>
+        async function loadPage() {
+            const hash = window.location.hash.substring(1) || 'index';
+            const file = hash + '.md';
+            try {
+                const res = await fetch('docs/' + file);
+                const text = await res.text();
+                document.getElementById('content').innerHTML = marked.parse(text);
+            } catch (e) {
+                document.getElementById('content').innerHTML = '<p>Page not found.</p>';
+            }
+        }
+        window.addEventListener('hashchange', loadPage);
+        loadPage();
+    </script>
 </body>
 </html>
